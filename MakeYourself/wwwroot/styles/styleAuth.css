@@ -1,0 +1,90 @@
+body {
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+}
+
+.wrapper {
+    height: 100%;
+    padding: 10% 35% 10% 35%;
+}
+
+.content {
+    padding: 20px;
+    background-color: black;
+    background: rgba(0, 0, 0, .99);
+    border-radius: 10px;
+    text-align: center;
+}
+
+label {
+    font-family: cursive;
+    font-size: 20px;
+    color:white;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+input {
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    width: 70%;
+}
+
+button {
+    font-family: cursive;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    width: 70%;
+}
+
+select {
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    width: 70%;
+}
+
+.title {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 7px;
+    border-bottom: 2px solid white;
+}
+
+.button {
+    width: 30%;
+    background-color: #408cde;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #38ebd9;
+    cursor: pointer;
+}
+
+.date {
+    max-width: 100%;
+} 
+
+.message {
+    font-family: cursive;
+    font-size: 12px;
+    color: red;
+    margin-bottom: 5px;
+}
