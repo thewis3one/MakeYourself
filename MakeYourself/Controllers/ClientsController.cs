@@ -49,7 +49,7 @@ namespace MakeYourself.Controllers
             await _appDbContext.Clients.AddAsync(client);
             await _appDbContext.SaveChangesAsync();
 
-            return Ok(new { client.Id, registraionData.FIO, registraionData.DateOfBirth });
+            return Ok(new { client.Id });
         }
 
         [HttpPost]
@@ -58,19 +58,23 @@ namespace MakeYourself.Controllers
         {
                 var client = await _appDbContext.Clients
                 .Where(x => x.Login == authData.Login && x.Password == authData.Password)
-                .Select(x => new { x.Id, x.FIO, x.DateOfBirth })
+                .Select(x => new { x.Id, x.FIO, x.DateOfBirth, x.Weight, x.Height, x.PhysiqueId })
                 .FirstOrDefaultAsync();
             
             if (client != null)
             {
-                return Ok(client);
+                string physique = await _appDbContext.Physiques
+                    .Where(x => x.Id == client.PhysiqueId)
+                    .Select(x => x.Name)
+                    .FirstOrDefaultAsync();
 
+                return Ok(new {client.Id, client.FIO, client.DateOfBirth, client.Weight, client.Height, physique});
             }
             else
             {
                 return BadRequest("Неверный логин или пароль");
             }
-            
+
         }
 
         [HttpPut]
