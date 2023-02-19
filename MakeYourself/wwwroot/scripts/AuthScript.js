@@ -1,4 +1,6 @@
-﻿let button = document.getElementById("Button_submit");
+﻿import { IdClient } from "./GlobalVariables";
+
+let button = document.getElementById("Button_submit");
 
 let label = document.createElement("label");
 label.className = "message";
@@ -29,7 +31,8 @@ button.addEventListener("click", function () {
         body: JSON.stringify(client)
     })
         .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((data) => IdClient = Object.assign({}, data))
+        .then(window.open("C:/Users/dmitr/Desktop/MYS/MakeYourself/MakeYourself/wwwroot/PersonalArea.html"))
         .catch(() => passwrd.insertAdjacentElement("afterend", label))
 },
     false);

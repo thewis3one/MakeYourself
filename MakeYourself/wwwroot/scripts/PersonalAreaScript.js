@@ -16,6 +16,8 @@
 //     fetch('', )
 // },false);
 
+import { IdClient } from "./GlobalVariables";
+
 let button = document.getElementsByClassName('menu-btn')[0];
 console.log(button)
 button.addEventListener('click', function (e) {
@@ -26,3 +28,9 @@ button.addEventListener('click', function (e) {
 
     content_action.classList.toggle('content-active');
 }, false)
+
+document.getElementById('Name').textContent = IdClient.fio;
+document.getElementById('DataOfBirthday').textContent = IdClient.dateOfBirth;
+document.getElementById('Weight').textContent = IdClient.weight;
+document.getElementById('Height').textContent = IdClient.height;
+document.getElementById('Physic').textContent = IdClient.physique;

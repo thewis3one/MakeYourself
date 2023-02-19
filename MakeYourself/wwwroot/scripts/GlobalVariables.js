@@ -1,1 +1,1 @@
-﻿export let client;
+﻿export let IdClient;
