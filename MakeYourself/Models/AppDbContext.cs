@@ -12,6 +12,10 @@ namespace MakeYourself.Models
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<Physique> Physiques { get; set; }
+        public DbSet<Calendar> Calendars { get; set; }
+        public DbSet<Exercise> Exercises { get; set; }
+        public DbSet<TrainDay> TrainDays { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
