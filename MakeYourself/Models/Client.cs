@@ -34,6 +34,8 @@ namespace MakeYourself.Models
 
         public Physique Physique { get; set; }
 
+        public IEnumerable<Calendar> Calendars { get; set; }
+
         public void Configure(EntityTypeBuilder<Client> builder)
         {
             builder
